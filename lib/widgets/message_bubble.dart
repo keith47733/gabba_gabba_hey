@@ -10,7 +10,7 @@ class MessageBubble extends StatelessWidget {
   final bool isMe;
   final Key msgKey;
 
-  MessageBubble({
+  const MessageBubble({super.key,
     required this.userId,
     required this.imageUrl,
     required this.userName,
@@ -73,9 +73,13 @@ class MessageBubble extends StatelessWidget {
         left: isMe ? null : 10,
         right: isMe ? 10 : null,
         child: CircleAvatar(
-					radius: 25.0,
-          backgroundImage: NetworkImage(imageUrl),
-        ),
+					radius: 26.0,
+					backgroundColor: Colors.black,
+					child: CircleAvatar(
+									radius: 25.0,
+						backgroundImage: NetworkImage(imageUrl),
+					),
+				),
       ),
     ]);
   }

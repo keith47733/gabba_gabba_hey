@@ -9,6 +9,8 @@ import '../widgets/auth_form.dart';
 import '../widgets/show_error_dialog.dart';
 
 class AuthScreen extends StatefulWidget {
+  const AuthScreen({super.key});
+
   @override
   State<AuthScreen> createState() => _AuthScreenState();
 }
@@ -34,12 +36,11 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   void login(ctx, userEmail, userPassword) async {
-    UserCredential authResult;
     try {
       setState(() {
         isLoading = true;
       });
-      authResult = await auth.signInWithEmailAndPassword(
+      await auth.signInWithEmailAndPassword(
         email: userEmail,
         password: userPassword,
       );
@@ -50,7 +51,7 @@ class _AuthScreenState extends State<AuthScreen> {
       }
       showErrorDialog(ctx, 'Login error', message);
     } catch (error) {
-      print(error);
+      showErrorDialog(ctx, 'Error', error);
     }
   }
 
@@ -86,7 +87,7 @@ class _AuthScreenState extends State<AuthScreen> {
         isLoading = false;
       });
     } catch (error) {
-      print(error);
+      showErrorDialog(ctx, 'Error', error);
     }
   }
 

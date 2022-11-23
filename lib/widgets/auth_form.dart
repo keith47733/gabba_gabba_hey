@@ -1,14 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:gabba_gabba_hey/widgets/show_error_dialog.dart';
 
 import '../styles/form_field_decoration.dart';
 import '../styles/layout.dart';
+import 'show_error_dialog.dart';
 import 'user_image_picker.dart';
 
 class AuthForm extends StatefulWidget {
-  const AuthForm(this.submitAuthForm, this.isLoading);
+  const AuthForm(this.submitAuthForm, this.isLoading, {super.key});
 
   final bool isLoading;
   final void Function(
@@ -78,6 +78,9 @@ class _AuthFormState extends State<AuthForm> {
                   if (!isLoginMode) UserImagePicker(imagePick),
                   TextFormField(
                     key: const ValueKey('email'),
+										autocorrect: false,
+										textCapitalization: TextCapitalization.none,
+										enableSuggestions: false,
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     decoration: formFieldDecoration(context).copyWith(
@@ -101,6 +104,8 @@ class _AuthFormState extends State<AuthForm> {
                     TextFormField(
                       key: const ValueKey('username'),
                       keyboardType: TextInputType.text,
+											textCapitalization: TextCapitalization.words,
+											enableSuggestions: false,
                       textInputAction: TextInputAction.next,
                       decoration: formFieldDecoration(context).copyWith(
                         labelText: 'User name',

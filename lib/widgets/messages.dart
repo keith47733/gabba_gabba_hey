@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'message_bubble.dart';
 
 class Messages extends StatelessWidget {
+  const Messages({super.key});
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<User>(

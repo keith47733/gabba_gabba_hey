@@ -5,10 +5,11 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../styles/layout.dart';
+import 'show_error_dialog.dart';
 
 class UserImagePicker extends StatefulWidget {
 	final Function(File pickedImage) imagePick;
-	UserImagePicker(this.imagePick);
+	const UserImagePicker(this.imagePick, {super.key});
 
   @override
   State<UserImagePicker> createState() => _UserImagePickerState();
@@ -26,8 +27,8 @@ class _UserImagePickerState extends State<UserImagePicker> {
         pickedImage = File(pickedImageX.path);
       });
 			widget.imagePick(pickedImage!);
-    } on PlatformException catch (e) {
-      print('Failed to pick image: $e');
+    } on PlatformException catch (error) {
+      showErrorDialog(context, 'Error', error);
     }
   }
 

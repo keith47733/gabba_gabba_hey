@@ -6,6 +6,8 @@ import '../styles/form_field_decoration.dart';
 import '../styles/layout.dart';
 
 class NewMessage extends StatefulWidget {
+  const NewMessage({super.key});
+
   @override
   State<NewMessage> createState() => _NewMessageState();
 }
@@ -30,7 +32,6 @@ class _NewMessageState extends State<NewMessage> {
 
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser;
     return Container(
       margin: const EdgeInsets.only(top: Layout.SPACING),
       padding: const EdgeInsets.all(Layout.SPACING / 2),
@@ -39,6 +40,9 @@ class _NewMessageState extends State<NewMessage> {
           Expanded(
             child: TextField(
               controller: newMessageController,
+							textCapitalization: TextCapitalization.sentences,
+							autocorrect: true,
+							enableSuggestions: true,
               decoration: formFieldDecoration(context).copyWith(
                 labelText: 'Send a message',
               ),
