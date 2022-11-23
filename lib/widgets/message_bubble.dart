@@ -52,7 +52,7 @@ class MessageBubble extends StatelessWidget {
               userName,
               textWidthBasis: TextWidthBasis.longestLine,
               textAlign: isMe ? TextAlign.end : TextAlign.start,
-              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontWeight: FontWeight.bold,
                     color: isMe ? Theme.of(context).colorScheme.onPrimaryContainer : Colors.black,
                   ),
@@ -61,7 +61,7 @@ class MessageBubble extends StatelessWidget {
               message,
               textWidthBasis: TextWidthBasis.longestLine,
               textAlign: isMe ? TextAlign.end : TextAlign.start,
-              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     color: isMe ? Theme.of(context).colorScheme.onPrimaryContainer : Colors.black,
                   ),
             ),
