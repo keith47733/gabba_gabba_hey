@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gabba_gabba_hey.iml" filepath="$PROJECT_DIR$/gabba_gabba_hey.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/gabba_gabba_hey_android.iml" filepath="$PROJECT_DIR$/android/gabba_gabba_hey_android.iml" />
+    </modules>
+  </component>
+</project>
